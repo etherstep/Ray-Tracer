@@ -17,7 +17,7 @@ typedef struct timeval	t_time;
 typedef pthread_t		t_pthread;
 typedef pthread_mutex_t	t_mutex;
 
-# define THREAD_COUNT 12
+# define THREAD_COUNT 16
 # define PIXEL_BLOCK_SIZE 16
 
 typedef struct s_phong
