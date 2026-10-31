@@ -3,13 +3,13 @@ _This project has been created as part of the 42 curriculum by jpelline and zfar
 A Multithreaded CPU Ray Tracer with Phong Lighting Model.
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/usvapel/minirt/readme/materials.png" alt="Demo" width="70%" />
+	<img src="docs/materials.png" alt="Demo" width="70%" />
 </p>
 
 <table align="center">
   <tr>
-    <td><img src="https://raw.githubusercontent.com/usvapel/minirt/readme/methane.png" alt="Demo 2" width="100%"/></td>
-    <td><img src="https://raw.githubusercontent.com/usvapel/minirt/readme/checkers.png" alt="Demo 3" width="100%"/></td>
+    <td><img src="docs/methane.png" alt="Demo 2" width="100%"/></td>
+    <td><img src="docs/checkers.png" alt="Demo 3" width="100%"/></td>
   </tr>
 </table>
 
@@ -29,7 +29,7 @@ A Multithreaded CPU Ray Tracer with Phong Lighting Model.
 - Automatic Scene Saving: Optional scene autosave functionality enabled through the `--autosave` command-line flag.
 
 ## Scene File Format
-miniRT uses a custom .rt scene format to define cameras, light sources, geometric primitives, materials, textures, and skyboxes.
+Using a custom .rt scene format to define cameras, light sources, geometric primitives, materials, textures, and skyboxes.
 Each scene component is defined using a type identifier followed by its corresponding parameters.
 ```
 # Sphere: position, radius, RGB color, optional reflectivity, refraction index, image texture ID
@@ -46,7 +46,7 @@ Interact with the scene using the following mouse and keyboard shortcuts to navi
 | Input                | Action                      |
 | -------------------- | --------------------------- |
 | `wasd` | Camera movement |
-| `Right Click (Hold)` | Camera look around|
+| `Right Click (Hold)` | Camera look around |
 | `Z + Right Click (Hold)`    | Pick object     |
 | `X + Right Click (Hold)`    | Rotate object      |
 | `C + Right Click (Hold)`    | Scale object       |
