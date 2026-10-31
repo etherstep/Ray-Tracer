@@ -24,7 +24,8 @@ void	get_specular(t_engine *engine, t_hit *hit, t_phong *p,
 		t_generic_light light)
 {
 	float	specular_strength;
-	float	light_distance;
+	// float	light_distance;
+	(void) light;
 
 	p->view_dir = sub_vec3d(engine->camera.pos, hit->pos);
 	p->view_dir = normalize_vec3d(p->view_dir);
@@ -33,9 +34,9 @@ void	get_specular(t_engine *engine, t_hit *hit, t_phong *p,
 	specular_strength = powf(fmaxf(0.0f, dot_vec3d(p->view_dir,
 					p->reflect_dir)), SHININESS);
 	p->specular = nscale_vec3d(p->light_color, specular_strength);
-	light_distance = magnitude_vec3d(sub_vec3d(adjusted_light_pos(light),
-				hit->pos));
-	p->specular = nscale_vec3d(p->specular, 1.0f / (light_distance));
+	// light_distance = magnitude_vec3d(sub_vec3d(adjusted_light_pos(light),
+	// 			hit->pos));
+	// p->specular = nscale_vec3d(p->specular, 1.0f / (light_distance));
 }
 
 void	get_diffuse(t_phong *p)
