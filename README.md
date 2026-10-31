@@ -55,6 +55,7 @@ Interact with the scene using the following mouse and keyboard shortcuts to navi
 
 ### Prerequisites
 
+- Operating System: Unix-like systems (Linux and macOS).
 - C compiler with C89 standard support.
 - `make` build utility.
 
@@ -62,7 +63,7 @@ Interact with the scene using the following mouse and keyboard shortcuts to navi
 
 Clone and compile the project by running:
 ```bash
-git clone <repository-url> miniRT
+git clone --depth 1 --single-branch -b main https://github.com/etherstep/Ray-Tracer.git
 cd miniRT
 make
 ```
