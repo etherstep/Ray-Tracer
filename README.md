@@ -13,6 +13,13 @@ A Multithreaded CPU Ray Tracer with Phong Lighting Model.
   </tr>
 </table>
 
+## Overview
+Ray tracing is a rendering technique used to simulate the interaction of light with surfaces. Rather than tracing light rays outward from light sources, which would waste computation on rays that never reach the camera, ray tracing typically works backward by casting rays from the camera through each pixel into the scene.
+
+When a ray intersects an object, the renderer evaluates the surface's material properties and lighting. Shadow rays determine whether light sources are occluded, while secondary rays can simulate reflections and refractions. The resulting light contributions are used to determine the pixel's final color. In our implementation, we use the Phong lighting model because it provides a straightforward and computationally inexpensive way to approximate surface illumination, including diffuse shading and specular highlights.
+
+Although ray tracing can produce realistic lighting effects, it is computationally expensive because rendering each pixel may involve multiple ray-object intersection tests and secondary rays. To improve performance and responsiveness, we use multithreading to distribute rendering work across multiple CPU threads. We also implement progressive rendering, initially displaying a lower-resolution, pixelated representation of the scene and progressively refining it over time. This allows users to see the scene taking shape without waiting for the entire image to finish rendering.
+
 ## Features
 - Multithreaded Rendering: Parallelized CPU ray tracing to improve rendering performance and utilize multiple CPU cores.
 - Perspective Camera: Configurable field of view (FOV) for flexible perspective projection.
