@@ -21,7 +21,7 @@ CC				:= cc
 # Compiler flags
 CFLAGS			:= -Wall -Wextra -Werror
 DEBUG_FLAGS		:= -g3 -fsanitize=address -fsanitize=undefined
-OPTFLAGS		:= -Ofast -ffast-math -march=native -flto -funroll-loops -fomit-frame-pointer
+OPTFLAGS		:= -O3 -ffast-math -march=native -flto -funroll-loops -fomit-frame-pointer
 
 # Directory structure
 SRC_DIR			:= src
@@ -197,7 +197,7 @@ all:
 # Main executable linking with dependency checking
 $(NAME): $(OBJS) $(LIBFT) $(MLX)
 	@echo ">$(BOLD)$(GREEN) Linking $(NAME)...$(RESET)"
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(OPTFLAGS) $(LDFLAGS) 
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(OPTFLAGS) $(LDFLAGS)
 	@touch $(MARKER_STANDARD)
 	@rm -f $(PROGRESS_FILE)
 	@echo ">$(BOLD)$(GREEN) $(NAME) successfully compiled!$(RESET)"

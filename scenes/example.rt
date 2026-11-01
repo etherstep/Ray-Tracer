@@ -1,0 +1,68 @@
+# ==========================================
+# CAMERA
+# ==========================================
+
+# Camera: position, viewing direction, field of view (degrees)
+#C <position> <direction> <fov>
+C -0.96,1.97,-8.78 0.03,-0.04,-1.00 70
+
+
+# ==========================================
+# LIGHTS
+# ==========================================
+
+# Point light: position, intensity, RGB color, optional attached object ID
+#L <position> <intensity> <color> [obj <object_id>]
+L 40.00,40.00,0.00 0.7 255,255,255 obj 0
+
+# Spotlight: position, direction, intensity, range, FOV (degrees), RGB color, optional attached object ID
+#LS <position> <direction> <intensity> <range> <fov> <color> [obj <object_id>]
+LS 0.00,1.00,0.00 0.10,-0.80,0.60 0.7 3.3 30 12,0,255 obj 2
+
+
+# ==========================================
+# OBJECTS
+# ==========================================
+
+# Plane: position, normal vector, RGB color, optional checkerboard texture ID
+#pl <position> <normal> <color> [img <texture_id>]
+pl 4.08,-0.13,0.12 0.00,1.00,0.00 255,255,255 img 1
+
+# Sphere: center position, radius, RGB color
+#sp <position> <radius> <color> [rl <reflectivity> rf <reflaction_index>]
+sp -0.96,1.97,-15.78 1.5 255,255,0 rl 1.0 rf 1.3
+
+# Cube: position, X size, Y size, Z size, rotation axis, RGB color, optional image texture ID
+#cu <position> <x-size> <y-size> <z-size> <rotation-axis> <color> [img <texture_id>]
+cu  -3.41,1.80,-15.63 1.0 1.0 1.0 -0.48,-0.49,-0.73  200,200,210  ch 1
+
+# Cylinder: position, axis, radius, height, RGB color, optional reflectivity
+# cy <position> <axis> <radius> <height> <color> [rl <reflectivity>]
+cy 2.0,1.97,-15.78 0.00,1.00,0.00 0.8 2.0 255,255,50 rl 0.2
+
+# Paraboloid: position, axis, focal parameter, height, RGB color
+#pa <position> <axis> <focal> <height> <color>
+pa  0.28,1.99,-16.03  0.94,0.34,0.01  0.2  0.4  255,245,182
+
+# ==========================================
+# TEXTURES
+# ==========================================
+
+# Image texture: diffuse/albedo image path, optional normal map image path
+#tx img <texture_path> [normal_map_path s <size>]
+tx img ./textures/sun.png
+tx img ./textures/mud.png ./textures/mud_normal.png s 10.0
+
+# Procedural checkerboard: first RGB color, second RGB color, scale, checker size
+#tx ch <color1> <color2> [s <size>]
+tx ch 52,86,84  64,140,104 s 0.3
+tx ch 128,42,80  20,160,160  s 0.3
+
+
+# ==========================================
+# SKYBOX
+# ==========================================
+
+# Skybox: environment image path
+#sky <image_path>
+sky ./textures/sky/methane.png
